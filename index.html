@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2c003e, #4b0082);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #fff;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin-top: 10px;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card {
+      background-color: #ffffffcc;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      padding: 25px 30px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      min-width: 220px;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      font-size: 1.4rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 1.8rem;
+      }
+      .card {
+        min-width: 180px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Kongu Engineering College</h1>
+    <p>Department of Computer Science and Design</p>
+  </div>
+
+  <div class="team-container">
+    <div class="card">
+      <h2> HEMALATHA </h2>
+      <p>Roll No: 22CDR032</p>
+    </div>
+    <div class="card">
+      <h2> INDHU VARSHINI </h2>
+      <p>Roll No: 22CDR033</p>
+    </div>
+  </div>
+
+</body>
+</html>
