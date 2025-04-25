@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Hemaa2005/Devops_Final.git'
+                git credentialsId: 'Github', url: 'https://github.com/Hemaa2005/Devops_Final.git'
             }
         }
 
