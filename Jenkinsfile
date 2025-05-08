@@ -1,10 +1,6 @@
 pipeline {
     agent any
 
-    triggers {
-    pollSCM('H/5 * * * *')  // Polls GitHub every 5 minutes
-    }
-
     stages {
         stage('Clone Repository') {
             steps {
