@@ -20,12 +20,12 @@
       align-items: center;
       justify-content: center;
       color: #fff;
+      padding: 20px;
     }
 
     .header {
       text-align: center;
       margin-bottom: 40px;
-      color: #fff;
     }
 
     .header h1 {
@@ -54,6 +54,8 @@
       text-align: center;
       transition: transform 0.3s ease;
       min-width: 220px;
+      color: #000;
+      cursor: pointer;
     }
 
     .card:hover {
@@ -69,6 +71,37 @@
     .card p {
       font-size: 1rem;
       color: #555;
+    }
+
+    .student-detail {
+      display: none;
+      background-color: #ffffffcc;
+      color: #000;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .student-detail h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .student-detail p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .back-btn {
+      padding: 10px 20px;
+      background-color: #4b0082;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
     }
 
     @media (max-width: 600px) {
@@ -89,16 +122,69 @@
     <p>Department of Computer Science and Design</p>
   </div>
 
-  <div class="team-container">
-    <div class="card">
-      <h2> HEMALATHA </h2>
-      <p>Roll No: 22CDR032</p>
-    </div>
-    <div class="card">
-      <h2> INDHU VARSHINI </h2>
-      <p>Roll No: 22CDR033</p>
-    </div>
+  <div class="team-container" id="teamContainer"></div>
+
+  <div class="student-detail" id="studentDetail">
+    <h2 id="detailName"></h2>
+    <p id="detailRoll"></p>
+    <p id="detailDept"></p>
+    <p id="detailYear"></p>
+    <p id="detailHobbies"></p>
+    <button class="back-btn" onclick="showMain()">Back</button>
   </div>
+
+  <script>
+    const students = [
+      {
+        name: 'HEMALATHA',
+        rollNo: '22CDR032',
+        department: 'Computer Science and Design',
+        year: '3rd Year',
+        hobbies: 'Painting, Coding'
+      },
+      {
+        name: 'INDHU VARSHNI',
+        rollNo: '22CDR033',
+        department: 'Computer Science and Design',
+        year: '3rd Year',
+        hobbies: 'Reading, Web Development'
+      }
+    ];
+
+    const teamContainer = document.getElementById('teamContainer');
+    const detailSection = document.getElementById('studentDetail');
+    const detailName = document.getElementById('detailName');
+    const detailRoll = document.getElementById('detailRoll');
+    const detailDept = document.getElementById('detailDept');
+    const detailYear = document.getElementById('detailYear');
+    const detailHobbies = document.getElementById('detailHobbies');
+
+    students.forEach(student => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h2>${student.name}</h2>
+        <p>Roll No: ${student.rollNo}</p>
+      `;
+      card.onclick = () => showStudent(student);
+      teamContainer.appendChild(card);
+    });
+
+    function showStudent(student) {
+      teamContainer.style.display = 'none';
+      detailSection.style.display = 'block';
+      detailName.textContent = student.name;
+      detailRoll.textContent = `Roll No: ${student.rollNo}`;
+      detailDept.textContent = `Department: ${student.department}`;
+      detailYear.textContent = `Year: ${student.year}`;
+      detailHobbies.textContent = `Hobbies: ${student.hobbies}`;
+    }
+
+    function showMain() {
+      teamContainer.style.display = 'flex';
+      detailSection.style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>
